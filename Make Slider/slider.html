@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            overflow: hidden;
+        }
+        .body-img {
+            height: 100%;
+            width: 100%;
+            margin-top: -1.5%;
+            background-color: rgba(255, 235, 205, 0.742);
+            background-image: url(images/body-img.jpeg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            filter: blur(2px);
+            opacity: 60%;
+            position: absolute;
+        }
+        .slider-images{
+            position: relative;
+        }
+        h1 {
+            font-size: 40px;
+            font-family: serif;
+            color: black;
+            line-height: 2;
+            font-weight: 700;
+            text-align: center;
+            position: relative;
+        }
+        p {
+            font-family: serif;
+            font-size: 23px;
+            text-align: center;
+            color:  black;
+            line-height: 1.6;
+            position: relative;
+        }
+        .slider-images {
+            height: 600px;
+            width: 800px;
+            margin-left: 28%;
+            overflow: hidden; /* Hide overflow */
+            position: relative; /* Needed for absolute positioning of images */
+        }
+        .slider-images img {
+            height: 500px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0; /* Hide images initially */
+            transition: opacity 1s ease; /* Smooth transition effect */
+        }
+        .slider-images img.active {
+            opacity: 1; /* Make active image visible */
+        }
+    </style>
+</head>
+
+<body>
+<div class="body-img"></div> 
+<div class="slide-card">
+    <h1>Paradise on Earth</h1>
+    <p>Jammu & Kashmir, a piece of heaven on earth, is the 19th largest state in India and it is<br>
+        located mostly all in the Himalayan mountains. It is also the only state in India with a <br>
+        Muslim-majority population.J&K consists of three main regions – Jammu, the Kashmir <br>
+        Valley and Ladakh.</p>
+    <div class="slider-images">
+        <img src="images/img-1.jpg" alt="" class="active">
+        <img src="images/img-2.jpg" alt="">
+        <img src="images/img-3.jpg" alt="">
+        <img src="images/img-4.jpg" alt="">
+        <img src="images/img-5.jpg" alt="">
+        <img src="images/img-6.jpg" alt="">
+    </div>
+</div>
+  
+    <script>
+        let currentIndex = 0;
+        let images = document.querySelectorAll(".slider-images img");
+
+        setInterval(function () {
+            images[currentIndex].classList.remove("active"); // Hide current image
+            currentIndex = (currentIndex + 1) % images.length; // Get next index
+            images[currentIndex].classList.add("active"); // Show next image
+        }, 3000);
+    </script>
+
+</body>
+
+</html>
