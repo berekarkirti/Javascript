@@ -1,0 +1,44 @@
+<script>
+    
+        class Shape {
+            constructor(color) {
+                this.color = color;
+            }
+            getColor() {
+                return this.color;
+            }
+        }
+
+        class Circle extends Shape {
+            constructor(color, radius) {
+                super(color);
+                this.radius = radius;
+            }
+        }
+
+        class ColoredCircle extends Circle {
+            constructor(color, radius) {
+                super(color, radius);
+            }
+        }
+
+        let coloredCircle = new ColoredCircle('blue', 5);
+        console.log(coloredCircle.getColor());
+
+</script>
+
+Output :- Blue
+->> Define a class named Shape
+->> Constructor method that takes a color parameter
+->> Assign the color to the instance property
+->> Method to get the color of the shape
+->> Return the color
+->> Define a class named Circle that extends Shape
+->> Constructor method that takes a color and radius parameter
+->> Call the constructor of the parent class
+->> Assign the radius to the instance property
+->> Define a class named ColoredCircle that extends Circle
+->> Constructor method that takes a color and radius parameter
+->> Call the constructor of the parent class
+->> Create an instance of ColoredCircle with 'blue' color and radius 5
+->> Output the color of the coloredCircle 

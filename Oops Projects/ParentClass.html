@@ -1,0 +1,57 @@
+<script>
+
+    class Vehicle {
+        constructor(make, model)
+        {
+            this.make = make;
+            this.model = model;
+        }
+        getInfo() 
+        {
+            return `Make: ${this.make}, Model: ${this.model}`;
+        }
+    }
+    
+    class Car extends Vehicle 
+    {
+        constructor(make, model, year) 
+        {
+            super(make, model);
+            this.year = year;
+        }
+        getInfo() 
+        {
+            return `${super.getInfo()}, Year: ${this.year}`;
+        }
+    }
+    
+    let myCar = new Car('Toyota', 'Camry', 2020);
+    console.log(myCar.getInfo());
+    
+</script>
+
+Output :- Make: Toyota, Model: Camry, Year: 2020 
+->> Define a class called Vehicle
+->> Constructor for Vehicle class, takes 'make' and 'model' parameters
+->> Assign make and model properties to the instance
+->> Method to get information about the vehicle
+->> Return a string containing make and model
+->> Define a class called Car that extends Vehicle
+->> Constructor for Car class, takes 'make', 'model', and 'year' parameters
+->> Call the constructor of the parent class (Vehicle)
+->> Assign year property to the instance
+->> Method to get information about the car
+->> Call the getInfo method of the parent class (Vehicle) and concatenate with year
+->> Create a new instance of Car class with make 'Toyota', model 'Camry', and year 2020
+->> Output the information of myCar to the console
+
+
+
+
+
+
+
+
+
+
+

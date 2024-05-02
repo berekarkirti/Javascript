@@ -1,0 +1,35 @@
+<script>
+    class Animal {
+        constructor(name) {
+            this.name = name;
+        }
+        speak() {
+            console.log(`${this.name} makes a noise.`);
+        }
+    }
+
+    class Dog extends Animal {
+        speak() {
+            console.log(`${this.name} barks.`);
+        }
+    }
+
+    let dog = new Dog('Buddy');
+    dog.speak();
+</script>
+
+Output :- Buddy barks.
+->> Inheritance is a way for one class to extend another class.
+->> The extends keyword is used in a class declaration or class expression to create a child class of another class.
+->> Define a class named Animal
+->> Constructor function to initialize instances of Animal with a name property
+->> Assign the provided name to the 'name' property of the instance
+->> Method named speak that logs a message indicating the animal makes a noise
+->> Define a class named Dog that extends Animal
+->> Override the speak method to log a message indicating the dog barks
+->> Log a message indicating the dog barks, using the name property inherited from Animal
+->> Create an instance of Dog with the name 'Buddy'
+->> Call the speak method of the Dog instance
+
+
+
