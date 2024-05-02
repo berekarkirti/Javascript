@@ -13,26 +13,33 @@
 
         body {
             overflow-x: hidden;
+            background-image: url(image/img-2.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            opacity: 66%;
+            width: 100%;
         }
 
-        .head-slider {
-            background-color: rgb(109, 28, 28);
-            height: 65px;
-            color: #fff;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1;
+        .body-img {
+            height: 500px;
+            width: 60%;
+            margin-top: -1.5%;
+            transform: translate(33%,20%);
+            background-color: rgba(18, 18, 18, 0.649);
+            filter: blur(56%);
+            position: absolute;
         }
+
 
         #sliding-text {
             position: relative;
-            margin: 0%;
-            padding: 0%;
+            margin-top: 23%;
             transition: all ease-in-out 0.8s;
-            font-size: 16px;
-            color: white;
-            font-weight: 500;
+            font-size: 23px;
+            color: #ffff;
+            font-weight: 600;
             text-align: center;
             padding: 20px;
         }
@@ -40,11 +47,11 @@
 </head>
 <body>
     <!-- slider -->
-    <div class="head-slider">
-        <div id="sliding-text">Special Offer: 50% Off! | Limited Time Only | Mother's Day Sale!$100, | Free Shipping on Orders $75+ |</div>
+    <div class="body-img">
+        <div class="head-slider">
+            <div id="sliding-text">“ All glory comes from daring to begin. ”  |  “ A small aim is a crime. ”  |  “ Teachers open the door, but you must enter by yourself ”  |  “ If you want to shine like a sun, first burn like a sun. ”  |   “ An investment in knowledge pays the best interest. ”  |   “ It’s not the time to look for excuses. ”</div>
+        </div>
     </div>
-
-
 
     <script>
         // head-slider
@@ -54,30 +61,29 @@
 
         function slideText() 
         {
-        const maxWidth = window.innerWidth - slidingText.clientWidth;
-        let currentPosition = 0;
-        // console.log(maxWidth);
-
-        const slideInterval = setInterval(() => 
-        {
-            if (currentPosition <= maxWidth) 
+            const maxWidth = slidingText.clientWidth - window.innerWidth;
+            let currentPosition = 0;
+            
+            const slideInterval = setInterval(() => 
             {
-            slidingText.style.left = currentPosition + "px";
-            currentPosition += 10; 
-            } 
-            else 
-            {
-            clearInterval(slideInterval);
-            setTimeout(() =>
-            {
-                    slidingText.style.left = "0px"; 
-                    sentenceIndex = (sentenceIndex + 1) % sentences.length;
-                    slidingText.innerHTML = sentences[sentenceIndex];
-                    setTimeout(slideText, 2000); 
-            }
-            ,1000); 
-            }
-        }, 10);
+                if (currentPosition >= -maxWidth) 
+                {
+                    slidingText.style.left = currentPosition + "px";
+                    currentPosition -= 1; 
+                } 
+                else 
+                {
+                    clearInterval(slideInterval);
+                    setTimeout(() =>
+                    {
+                        slidingText.style.left = "0px"; 
+                        sentenceIndex = (sentenceIndex + 1) % sentences.length;
+                        slidingText.innerHTML = sentences[sentenceIndex];
+                        setTimeout(slideText, 2000); 
+                    }
+                    ,1000); 
+                }
+            }, 10);
         }
         slideText(); 
     </script>
