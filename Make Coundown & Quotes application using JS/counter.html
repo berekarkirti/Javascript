@@ -61,11 +61,14 @@
   <script>
     let i = 0;
     let count;
-
+   
+    // start timer
     function start() {
+      // counter
       count = setInterval(function () {
         i++;
         if (i > 60) {
+          // stop timer
           stop();
           return;
         }
