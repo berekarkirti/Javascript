@@ -25,13 +25,7 @@
         filter: brightness(85%);
     }
 
-    h1 {
-      font-size: 88px;
-      color: #ffff;
-      margin: auto;
-      margin-top: 20%;
-    }
-
+    
     button {
       font-size: 1.5em;
       padding: 10px 20px;
@@ -49,38 +43,57 @@
         background-color: #ffffffd8;
         color: black;
     }
+
+    p{
+      font-size: 71px;
+      color: #ffff;
+      margin-top: 21%;
+    }
   </style>
 </head>
 <body>
   <div class="body-img">
-    <h1>0</h1>
-    <button onClick="start()">Start Timer</button>
-    <button onClick="stop()">Stop Timer</button>
-  </div>
+    <div class="main-container">
+      <div class="timer-container">
+          <p id="time" >00<span>h</span> : 00<span>m</span> : 00<span>s</span></p>
+      </div>
+      <div class="start-pause_btns">
+          <!-- Start Timer Button -->
+          <button id="startBtn">START</button>
+          <!-- Pause Timer Button -->
+          <button id="pauseBtn">PAUSE</button>
+          <!-- Restart Button -->
+          <button id="resetBtn">RESET</button>
+      </div>
+   </div>
+ </div>
 
   <script>
-    let i = 0;
-    let count;
-   
-    // start timer
-    function start() {
-      // counter
-      count = setInterval(function () {
-        i++;
-        if (i > 60) {
-          // stop timer
-          stop();
-          return;
-        }
-        console.log(i);
-        document.querySelector("h1").innerText = i;
-      }, 1000);
-    }
+    // JavaSctipt Countdown
+      let startBtn = document.getElementById("startBtn");
+      let pauseBtn = document.getElementById("pauseBtn");
+      let resetBtn = document.getElementById("resetBtn")
 
-    function stop() {
-      clearInterval(count);
-      document.querySelector("h1").innerText = "Timer stopped";
-    }
+      startBtn.addEventListener("click", () => {
+          let sec = 60;
+          timer = setInterval(() => {
+              let time = document.querySelector("p").innerHTML = '00<span>h</span> : 00<span>m</span> : ' + sec +'<span>s</span>';
+              if (sec <= 0) {
+                  clearInterval(timer);
+              }
+              sec--;
+          }, 1000)
+      })
+
+      pauseBtn.addEventListener("click", () => {
+          clearInterval(timer);
+      });
+
+      resetBtn.addEventListener("click", () => {
+          sec = 0;
+          time.innerHTML = '00<span>h</span> : 00<span>m</span> : 0' + sec +'<span>s</span>';
+      })
+
   </script>
 </body>
 </html>
