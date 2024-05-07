@@ -68,32 +68,44 @@
    </div>
  </div>
 
-  <script>
-    // JavaSctipt Countdown
-      let startBtn = document.getElementById("startBtn");
-      let pauseBtn = document.getElementById("pauseBtn");
-      let resetBtn = document.getElementById("resetBtn")
+ <script>
+          // Get references to the start, pause, and reset buttons
+          let startBtn = document.getElementById("startBtn");
+          let pauseBtn = document.getElementById("pauseBtn");
+          let resetBtn = document.getElementById("resetBtn")
 
-      startBtn.addEventListener("click", () => {
-          let sec = 60;
-          timer = setInterval(() => {
-              let time = document.querySelector("p").innerHTML = '00<span>h</span> : 00<span>m</span> : ' + sec +'<span>s</span>';
-              if (sec <= 0) {
-                  clearInterval(timer);
-              }
-              sec--;
-          }, 1000)
-      })
+          // Event listener for the start button
+          startBtn.addEventListener("click", () => {
+            
+              let sec = 60;
+             
+              timer = setInterval(() => {
+                 
+                  let time = document.querySelector("p").innerHTML = '00<span>h</span> : 00<span>m</span> : ' + sec +'<span>s</span>';
+                  
+                  if (sec <= 0)
+                  {
+                     
+                      clearInterval(timer);
+                  }
+                  sec--;
+              }, 1000) 
+          })
 
-      pauseBtn.addEventListener("click", () => {
-          clearInterval(timer);
-      });
+          // Event listener for the pause button
+          pauseBtn.addEventListener("click", () => {
+              clearInterval(timer);
+          });
 
-      resetBtn.addEventListener("click", () => {
-          sec = 0;
-          time.innerHTML = '00<span>h</span> : 00<span>m</span> : 0' + sec +'<span>s</span>';
-      })
+          // Event listener for the reset button
+          resetBtn.addEventListener("click", () => {
+              // Reset seconds to 0
+              sec = 0;
+              // Update the time display to show 00:00:00
+              time.innerHTML = '00<span>h</span> : 00<span>m</span> : 0' + sec +'<span>s</span>';
+          })
 
-  </script>
+</script>
+
 </body>
 </html>
