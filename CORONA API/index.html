@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Statistics</title>
+     <style>
+        body{
+             background-image: url(image/bg.jpg);
+             background-size: cover;
+             background-repeat: no-repeat;
+             background-attachment: fixed;
+             font-family: serif;
+             margin: 0;
+             overflow: hidden;
+             padding: 0;
+            }
+
+        .container{
+             max-width: 990px;
+             margin: 50px 95px;
+             text-align: center;
+             color: #ffff;
+            }
+
+        .stats{
+             display: flex;
+             justify-content: space-around;
+            }
+
+        .stat{
+             border: 3px solid #ccc;
+             border-radius: 8px;
+             background-image: url(image/bg.jpg);
+             padding: 40px ;
+             margin: 10px;
+             flex: 1;
+            }
+
+        h1{
+            font-size: 40px;
+            font-weight: 300;
+            margin-bottom: 5%;
+        }
+        
+        p{
+            font-size: 23px;
+            font-weight: lighter;
+        }   
+
+     </style>
+</head>
+<body>
+
+    <div class="container" style="margin-top: 15%;">
+        <h1>COVID-19 Data Visualization</h1>
+        <div class="stats">
+            <div class="stat">
+                <h2>Total Cases</h2>
+                <p id="totalCases">Loading...</p>
+            </div>
+            <div class="stat">
+                <h2>Total Deaths</h2>
+                <p id="totalDeaths">Loading...</p>
+            </div>
+            <div class="stat">
+                <h2>Total Recoveries</h2>
+                <p id="totalRecoveries">Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // Fetch data 
+        fetch('https://api.rootnet.in/covid19-in/stats/latest')
+
+        // Parse the response as JSON
+       .then(response => response.json())
+
+        .then(data => {
+
+                // total cases, deaths, and recoveries
+                const totalCases = data.data.summary.total;
+                const totalDeaths = data.data.summary.deaths;
+                const totalRecoveries = data.data.summary.discharged;
+
+                // Update HTML elements with the extracted data
+                document.getElementById('totalCases').innerText = totalCases.toLocaleString();
+                document.getElementById('totalDeaths').innerText = totalDeaths.toLocaleString();
+                document.getElementById('totalRecoveries').innerText = totalRecoveries.toLocaleString();
+        })
+
+        // If there's an error during fetching or processing...
+        .catch(error => console.error('Error fetching COVID-19 data:', error));
+
+    </script>
+</body>
+</html>
