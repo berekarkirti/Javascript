@@ -6,11 +6,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <title>CORONA API</title>
+    <!-- Style -->
     <style>
         body {
             font-family: serif;
             margin: 0;
             padding: 0;
+            background-color: rgba(250, 235, 215, 0.544);
             overflow-x: hidden;
         }
 
@@ -40,7 +42,6 @@
         }
 
         .col-4 {
-            border: 5px solid #ccc;
             border-radius: 8px;
             height: 300px;
             width: 380px;
@@ -68,6 +69,7 @@
 </head>
 <body>
 
+<!-- HTML -->
 <div class="container">
     <h1 class="text-img">COVID-19 Data Visualization</h1>
     <div class="stats">
@@ -86,32 +88,46 @@
     </div>
 </div>
 
+<!-- JavaScript -->
     <script>
-            function fetchData() {
-                fetch('https://api.rootnet.in/covid19-in/stats/latest')
-                    .then(response => response.json())
-                    .then(data => displayData(data))
-                    .catch(error => console.error('Error fetching COVID-19 data:', error));
-            }
-            fetchData();
 
+            //function for fetch COVID-19 data from the API
+            function fetchData() {
+               
+                fetch('https://api.rootnet.in/covid19-in/stats/latest')  //fetch data from the API
+                    .then(res => res.json()) // response as JSON 
+                    .then(data => displayData(data)) // Pass data to display
+                    .catch(err => console.err('Error fetching COVID-19 data:', err)); // errors
+            }
+            fetchData(); // call the function
+
+            // function to display data 
             function displayData(data) {
+
+                // get the total cases, deaths and recoveries
                 const totalCases = data.data.summary.total.toLocaleString();
                 const totalDeaths = data.data.summary.deaths.toLocaleString();
                 const totalRecoveries = data.data.summary.discharged.toLocaleString();
 
+                // display the data on webpage 
                 document.getElementById('totalCases').innerText = totalCases;
                 document.getElementById('totalDeaths').innerText = totalDeaths;
                 document.getElementById('totalRecoveries').innerText = totalRecoveries;
 
+                // get the data for each state
                 const regionalData = data.data.regional;
+
+
                 regionalData.forEach(region => {
+
+                    // get the state-name,total cases,deaths,recoveries
                     const state = region.loc;
                     const confirmedCases = region.totalConfirmed.toLocaleString();
                     const deaths = region.deaths.toLocaleString();
                     const recoveries = region.discharged.toLocaleString();
 
-                    const stateHTML = `
+                    // to display states data 
+                    const states = `
                         <div class="col-4 stat">
                             <h2>${state}</h2>
                             <p>Total Cases: ${confirmedCases}</p>
@@ -119,7 +135,9 @@
                             <p>Total Recoveries: ${recoveries}</p>
                         </div>
                     `;
-                    document.querySelector('.stats').insertAdjacentHTML('beforeend', stateHTML);
+                    document.querySelector('.stats').insertAdjacentHTML('beforeend', states);
+                    // insertAdjacentHTML:- inserts the htmlContent at the end of the content of states
+                    // beforeend:- Insert HTML at the end of the element's content
                 });
             }
    </script>
