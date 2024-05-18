@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER API</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url(image/vertical-shot-mountains-lake-blue-sky_181624-9604.avif);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 1400px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.902);
+            margin-top: 2%;
+            margin-bottom: 4%;
+            
+        }
+
+        .card {
+            background-color: rgba(58, 58, 58, 0.293);
+            height: 150px;
+            border: 2.5px solid rgba(178, 191, 216, 0.582);
+            border-radius: 12px;
+            transition: all ease-in-out 0.2s;
+            margin-bottom: 65px;
+        }
+
+        .card:hover {
+            border-color: white;
+            box-shadow: 0 4px 8px 0 rgba(211, 210, 210, 0.2), 0 6px 20px 0 rgba(191, 191, 191, 0.2);
+        }
+
+        .card-img {
+            height: 130px;
+            width: 130px;
+            border: 3px solid white;
+            border-radius: 50%;
+            margin-top: 10%;
+            background-color: rgb(255, 255, 255);
+            position: absolute;
+            top: 50%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+        }
+
+        .card-img img {
+            height: 100%;
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        h2,
+        p {
+            text-align: center;
+            color: white;
+            font-weight: 400;
+            margin-top: 2.5%;
+            margin-left: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mainSection" id="data-list-wrapper">
+        <div class="container-fluid">
+            <h1>User Data</h1>
+        </div>
+        <div class="row" id="cards-container"></div>
+    </div>
+</body>
+
+</html>
+
+
+<script>
+
+    function Fetchdata() {
+        fetch('https://reqres.in/api/users?page=2')
+            .then((res) => res.json())
+            .then(data => {
+                Cardlist(data.data);
+            })
+            .catch((err) => console.error(err));
+    }
+
+    Fetchdata();
+
+    function Cardlist(users) {
+        const store = users.map(user => Card(user.id, user.avatar, `${user.first_name} ${user.last_name}`, user.email));
+        const cardsContainer = document.getElementById("cards-container");
+        cardsContainer.innerHTML = store.join('');
+    }
+
+    function Card(id, image, name, email) {
+        let singlecard = `
+    <div class="col-4 m-auto mb-5 mt-5">
+        <div class="card">
+            <div class="card-img">
+                <img src="${image}" alt="${name}">
+            </div>
+            <div class="card-body">
+                <h2>${name}</h2>
+                <p>${email}</p>
+            </div>
+        </div>
+    </div>
+    `;
+        return singlecard;
+    }
+
+</script>
+</body>
+</html>
