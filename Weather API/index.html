@@ -30,7 +30,6 @@
             color: rgba(255, 255, 255, 0.902);
             margin-top: 2%;
             margin-bottom: 4%;
-            
         }
 
         .card {
@@ -88,43 +87,41 @@
 
 </html>
 
-
 <script>
-
     function Fetchdata() {
         fetch('https://reqres.in/api/users?page=2')
-            .then((res) => res.json())
+            .then((res) => res.json()) // Parsing the response to JSON
             .then(data => {
-                Cardlist(data.data);
+                Cardlist(data.data); // Calling Cardlist function with user data
             })
-            .catch((err) => console.error(err));
+            .catch((err) => console.error(err)); // Handling any errors
     }
+    Fetchdata(); // Calling the Fetchdata function to initiate fetch
 
-    Fetchdata();
-
+    // Function to generate a list of cards from user data
     function Cardlist(users) {
-        const store = users.map(user => Card(user.id, user.avatar, `${user.first_name} ${user.last_name}`, user.email));
-        const cardsContainer = document.getElementById("cards-container");
-        cardsContainer.innerHTML = store.join('');
+        const store = users.map(user => Card(user.id, user.avatar, `${user.first_name} ${user.last_name}`, user.email)); // Mapping through users to create card HTML for each
+        const cardsContainer = document.getElementById("cards-container"); // Selecting the container to display the cards
+        cardsContainer.innerHTML = store.join('');   // Inserting the generated cards into the container
     }
 
+    // Function to create a single card's HTML
     function Card(id, image, name, email) {
+        // Template literal for card HTML structure
         let singlecard = `
-    <div class="col-4 m-auto mb-5 mt-5">
-        <div class="card">
-            <div class="card-img">
-                <img src="${image}" alt="${name}">
-            </div>
-            <div class="card-body">
-                <h2>${name}</h2>
-                <p>${email}</p>
+        <div class="col-4 m-auto mb-5 mt-5">
+            <div class="card">
+                <div class="card-img">
+                    <img src="${image}" alt="${name}">
+                </div>
+                <div class="card-body">
+                    <h2>${name}</h2>
+                    <p>${email}</p>
+                </div>
             </div>
         </div>
-    </div>
-    `;
+        `;
         return singlecard;
-    }
+    }// Returning the card HTML 
 
 </script>
-</body>
-</html>
