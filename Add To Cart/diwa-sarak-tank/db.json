@@ -1,0 +1,188 @@
+{
+  "pitches": [
+    {
+      "image": "https://m.media-amazon.com/images/I/81MJ4Eic6YL._AC_CR0%2C0%2C0%2C0_SX615_SY462_.jpg",
+      "price": "75",
+      "percentage": 21,
+      "description": "At Wakao, we are passionate about healthy, sustainable food. Our goal is to bring ethically sourced, sustainably grown food to our customer’s dinner table",
+      "founder": "Sairaj Dhond",
+      "category": "Food",
+      "year": "05-04-2020",
+      "title": "Wakao products",
+      "id": "3"
+    },
+    {
+      "title": "Tagz Chips",
+      "image": "https://m.media-amazon.com/images/I/81BHMCJnp9L._SX679_PIbundle-5,TopRight,0,0_AA679SH20_.jpg",
+      "founder": "Anish Basu Roy",
+      "category": "Food",
+      "price": "2645",
+      "id": "4"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/81UAsQsdp5L._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 24,
+      "percentage": 23,
+      "description": "Buy The Sass Bar Brand Products Online at best Price in India. Shop 100% organic and Natural products ",
+      "founder": "Rishika Nayak",
+      "category": "Personal Care",
+      "year": "20-01-2014",
+      "title": "The Saas Bar ",
+      "id": "5"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61RjUgGy04L._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 52,
+      "percentage": 25,
+      "description": "Just over a year old, Haryana-based Hammer founded by Rohit Nandwani has streamlined its product range keeping with the shift to wireless audio tech. It is now focused on strengthening its D2C game.",
+      "founder": "Rohit Nandwani",
+      "category": "Electronics",
+      "year": "21-03-2012",
+      "title": "Hammer",
+      "id": "6"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/71Wa7-cOUqL._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 19,
+      "percentage": 2.5,
+      "description": "Looking for Quirky shoes & clothes? Check out The Quirky Naari! Explore a range of LED shoes & Party wear sneakers that will make you stand out",
+      "founder": "Malvica Saxena",
+      "category": "Fashion",
+      "year": "14-08-2021",
+      "title": "Quirky Naari",
+      "id": "8"
+    },
+    {
+      "image": "https://static.wixstatic.com/media/5755f6_023c4baf970a43e4b187f7271a33fcad~mv2.png/v1/crop/x_237,y_352,w_1328,h_1331/fill/w_614,h_614,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/5755f6_023c4baf970a43e4b187f7271a33fcad~mv2.png",
+      "price": 54,
+      "percentage": 12,
+      "description": "Asia's first and only custom made electric kick scooter operator.World’s first in-premises electric vehicle hybrid-subscription fleet service.",
+      "founder": "Rutvij Dasadia ",
+      "category": "Education",
+      "year": "21-05-2021",
+      "title": "Booz scooters",
+      "id": "9"
+    },
+    {
+      "image": "https://www.cocofit.in/images/Picture4_large.png",
+      "price": 25,
+      "percentage": 3.5,
+      "description": "We strive, respect and work hard every second taking our demigod to a new level with a delicious serving that would be a life changing experience.",
+      "founder": "Sashi Kanth V",
+      "category": "Food",
+      "year": "17-11-2017",
+      "title": "Cocofit",
+      "id": "11"
+    },
+    {
+      "image": "https://static.wixstatic.com/media/5f24cf_a17220104bb5486d943ad3acd5808e90~mv2.png/v1/fill/w_506,h_314,al_c,q_80,usm_0.66_1.00_0.01/5f24cf_a17220104bb5486d943ad3acd5808e90~mv2.png",
+      "price": 26,
+      "percentage": 2.56,
+      "description": "Falhari is India’s #1 fresh fruit products brand with an extensive range of delightful, made-to-order recipes of Salads, Juices, Smoothies, Lassis, Yoghurts, and more",
+      "founder": "Rahul Shankar Bhardwaj",
+      "category": "Food",
+      "year": "20-12-2021",
+      "title": "Falhari",
+      "id": "13"
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYOkeAS5PgCBISOPRp_mZJuIxJ74IyCAlP_A&usqp=CAU",
+      "price": 50,
+      "percentage": 2,
+      "description": "We push our boundaries every day, we’re here to innovate and inspire a new generation of sustainable sanitation technology. PadCare isn’t a startup, it’s a revolution.",
+      "founder": "Ajinkya Dhariya",
+      "category": "Electronics",
+      "year": "07-09-2022",
+      "title": "Padcare Lab",
+      "id": "15"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/617QlJ62nFL._AC_UL480_FMwebp_QL65_.jpg",
+      "price": 57,
+      "percentage": 2,
+      "description": "aradyes is a semi-permanent hair color brand. She introduced the brand by identifying a gap in the market. Banking on her family business of dyes and intermediates, she teamed up with professionals and began R&D to formulate hair colors in their lab.",
+      "founder": "Yushika Jolly,",
+      "category": "Personal Care",
+      "year": "01-07-2021",
+      "title": "Paradyes",
+      "id": "16"
+    },
+    {
+      "image": "https://www.primebook.in/uploads/feature/1675677835_d887598e98a67da677f0.png",
+      "price": 75,
+      "percentage": 1.5,
+      "description": "Primebook 4G unites everything you need to elevate your learning. Meet the first Made In India 4G laptop, engineered with cutting-edge technology, based on the Android 11 Ecosystem, unlocking limitless learning opportunities.",
+      "founder": "Chitranshu Mahant",
+      "category": "Tech",
+      "title": "Primebook",
+      "year": "14-02-2020",
+      "id": "21"
+    },
+    {
+      "image": "https://m.media-amazon.com/images/I/61pq3ae629L._AC_UY327_FMwebp_QL65_.jpg",
+      "price": 45,
+      "percentage": 10,
+      "description": "HoloKitab is an edTech platform that enables book publishers and manufacturers from various industries to deliver Augmented Reality content to their users in a cost effective way.",
+      "founder": "Dipanshu Bajaj and Nikhil Miglani",
+      "category": "Education",
+      "year": "15-04-2020",
+      "title": "HoloKitab",
+      "id": "22"
+    },
+    {
+      "id": "4b6a",
+      "title": "Portronics Toad 23",
+      "price": "296",
+      "category": "Electronics",
+      "image": "https://m.media-amazon.com/images/I/41KuRShR97L._SX425_.jpg",
+      "founder": "ajay"
+    }
+  ],
+  "cart": [
+    {
+      "id": "497a",
+      "title": "Tagz Chips",
+      "image": "https://m.media-amazon.com/images/I/81BHMCJnp9L._SX679_PIbundle-5,TopRight,0,0_AA679SH20_.jpg",
+      "price": "26",
+      "founder": "Anish Basu Roy",
+      "category": "Foodid    =4",
+      "description": null
+    },
+    {
+      "id": "3c7d",
+      "title": "Wakao products",
+      "image": "https://m.media-amazon.com/images/I/81MJ4Eic6YL._AC_CR0%2C0%2C0%2C0_SX615_SY462_.jpg",
+      "price": "75",
+      "founder": "Sairaj Dhond",
+      "category": "Foodid    =3",
+      "description": null
+    },
+    {
+      "id": "920c",
+      "title": "Hammer",
+      "image": "https://m.media-amazon.com/images/I/61RjUgGy04L._AC_UY327_FMwebp_QL65_.jpg",
+      "price": "52",
+      "founder": "Rohit Nandwani",
+      "category": "Electronicsid    =6",
+      "description": null
+    },
+    {
+      "id": "a878",
+      "title": "Wakao products",
+      "image": "https://m.media-amazon.com/images/I/81MJ4Eic6YL._AC_CR0%2C0%2C0%2C0_SX615_SY462_.jpg",
+      "price": "75",
+      "founder": "Sairaj Dhond",
+      "category": "Foodid    =3",
+      "description": null
+    },
+    {
+      "id": "3011",
+      "title": "Booz scooters",
+      "image": "https://static.wixstatic.com/media/5755f6_023c4baf970a43e4b187f7271a33fcad~mv2.png/v1/crop/x_237,y_352,w_1328,h_1331/fill/w_614,h_614,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/5755f6_023c4baf970a43e4b187f7271a33fcad~mv2.png",
+      "price": "54",
+      "founder": "Rutvij Dasadia ",
+      "category": "Educationid    =9",
+      "description": null
+    }
+  ]
+}

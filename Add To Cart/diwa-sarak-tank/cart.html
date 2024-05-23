@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Card</title>
+</head>
+
+<body>
+  <h1>This is cart page</h1>
+  <div id="mainSection"></div>
+
+  <script>
+    function Fetchdata() {
+      fetch("https://add-to-cart-backend-1-zim1.onrender.com/cart")
+        .then((res) => res.json())
+        .then((data) => {
+          console.log("Fetched data:", data); // Log fetched data
+          Cardlist(data);
+        })
+        .catch((err) => console.error("Fetch error:", err));
+    }
+
+    Fetchdata();
+
+    function Cardlist(data) {
+      const store = data.map((el) => Card(el.id, el.image, el.title, el.price, el.founder, el.category));
+      const mainSection = document.getElementById("mainSection");
+      mainSection.innerHTML = store.join("");
+    }
+
+    function Card(id, image, title, price, founder, category) {
+      let singlecard = `
+        <div class="card" data-id="${id}">
+          <a href="descripation.html?title=${encodeURIComponent(title)}&image=${encodeURIComponent(image)}&price=${encodeURIComponent(price)}&founder=${encodeURIComponent(founder)}&category=${encodeURIComponent(category)}&id=${encodeURIComponent(id)}">
+            <div class="card-img">
+              <img src="${image}" alt="pitch">
+            </div>
+            <div class="card-body">
+              <h4 class="card-title">${title}</h4>
+              <p class="card-founder">${founder}</p>
+              <p class="card-category">${category}</p>
+              <p class="card-price">${price}</p>
+            </div>
+          </a>
+          <button data-id="${id}" class="card-button">Delete</button>
+        </div>
+      `;
+      return singlecard;
+    }
+
+    document.addEventListener("click", (e) => {
+      if (e.target.classList.contains("card-button")) {
+        console.log("Delete button clicked:", e.target.dataset.id); 
+        DeleteProduct(e.target.dataset.id);
+      }
+    });
+
+    function DeleteProduct(id) {
+      fetch(`https://add-to-cart-backend-1-zim1.onrender.com/cart/${id}`, {
+        method: "DELETE"
+      })
+        .then((res) => {
+          console.log("Delete response status:", res.status); 
+          return res.json();
+        })
+        .then((data) => {
+          console.log("Delete response data:", data); 
+          alert("Deleted...");
+          document.querySelector(`.card[data-id='${id}']`).remove();
+        })
+        .catch((err) => console.error("Delete error:", err));
+    }
+  </script>
+</body>
+
+</html>

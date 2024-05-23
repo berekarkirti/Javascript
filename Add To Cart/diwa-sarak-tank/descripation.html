@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Description Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #F4F4F4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .data {
+            margin-bottom: 20px;
+        }
+        .data label {
+            font-weight: bold;
+        }
+        .data p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Description page</h1>
+    <div class="container"  style="text-align: center;">
+        <img id="image" src="https://m.media-amazon.com/images/I/61pq3ae629L._AC_UY327_FMwebp_QL65_.jpg" alt="Product Image">
+        <h1 id="title">HoloKitab</h1>
+        <div class="data">
+            <label>Category:</label>
+            <p id="category">Education</p>
+        </div>
+        <div class="data">
+            <label>Price:</label>
+            <p id="price">$45</p>
+        </div>
+        <div class="data">
+            <label>Founder(s):</label>
+            <p id="founder">Dipanshu Bajaj and Nikhil Miglani</p>
+        </div>
+        <div class="data">
+            <label>Description:</label>
+            <p id="description">HoloKitab is an edTech platform that enables book publishers and manufacturers from various industries to deliver Augmented Reality content to their users in a cost-effective way.</p>
+        </div>
+        <div style="display:flex;justify-content: center;">
+            <button id="AddToCart" style="border: 1px solid white;background-color: black;color: teal;padding:5px;cursor: pointer;">ADD TO Cart</button>
+        </div>
+    </div>
+
+    <script>
+        // Define param globally
+        let param = new URLSearchParams(window.location.search);
+
+        window.addEventListener("load", () => {
+            document.getElementById("image").src = param.get("image");
+            document.getElementById("title").innerText = param.get("title");
+            document.getElementById("category").innerText = param.get("category");
+            document.getElementById("price").innerText = param.get("price");
+            document.getElementById("founder").innerText = param.get("founder");
+            document.getElementById("description").innerText = param.get("description");        
+        });
+
+        document.getElementById("AddToCart").addEventListener("click", () => {
+            let cardata = {
+                title: param.get("title"),
+                image: param.get("image"),
+                price: param.get("price"),
+                founder: param.get("founder"),
+                category: param.get("category"),
+                description: param.get("description")
+        }
+        // data post to cart page
+        fetch("http://localhost:3000/cart",{
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body:JSON.stringify(cardata)
+        }).then((res)=>res.json())
+        .then((data)=>alert("Data Added To Cart"))
+        .catch((err)=>console.log(err))
+    })
+
+
+    </script>
+</body>
+</html>
