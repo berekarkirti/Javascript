@@ -230,5 +230,7 @@ updatePitchBtn.addEventListener("click", () => {
 
 })
 
+searchByButton.addEventListener("click",)
+
 
 

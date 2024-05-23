@@ -37,6 +37,21 @@
         .data p {
             margin: 5px 0;
         }
+
+        #AddToCart{
+            transition: all ease-in-out 0.4s;
+            border: 1px solid white;
+            background-color:#3cabe7;
+            color:#ffff;
+            padding:10px 20px;
+            font-weight: 200;
+            cursor: pointer;
+        }
+
+        #AddToCart:hover{
+            background-color: #0897e4;
+            font-weight: 400;
+        }
     </style>
 </head>
 <body>
@@ -61,7 +76,7 @@
             <p id="description">HoloKitab is an edTech platform that enables book publishers and manufacturers from various industries to deliver Augmented Reality content to their users in a cost-effective way.</p>
         </div>
         <div style="display:flex;justify-content: center;">
-            <button id="AddToCart" style="border: 1px solid white;background-color: black;color: teal;padding:5px;cursor: pointer;">ADD TO Cart</button>
+            <button id="AddToCart">ADD TO Cart</button>
         </div>
     </div>
 
@@ -88,7 +103,7 @@
                 description: param.get("description")
         }
         // data post to cart page
-        fetch("http://localhost:3000/cart",{
+        fetch("https://add-to-cart-backend-1-zim1.onrender.com/cart",{
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

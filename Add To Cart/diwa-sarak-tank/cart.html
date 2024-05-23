@@ -5,6 +5,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product Card</title>
+  <style>
+     body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    #mainSection {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      width: 300px;
+      margin: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card-img img {
+      width: 100%;
+      height: auto;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-title {
+      font-size: 1.5em;
+      margin: 0 0 10px;
+      color: #333;
+    }
+
+    .card-founder,
+    .card-category,
+    .card-price {
+      margin: 0;
+      color: #777;
+    }
+
+    .card-price {
+      font-size: 1.2em;
+      color: black;
+      margin-top: 10px;
+    }
+
+    .card-button {
+      background-color: #3cabe7;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      display: block;
+      width: 100%;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    .card-button:hover {
+      background-color:  #0897e4;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
+
 </head>
 
 <body>
