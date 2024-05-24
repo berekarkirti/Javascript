@@ -17,7 +17,7 @@ let updatePitchCategoryInput = document.getElementById("update-pitch-category");
 let updatePitchPriceInput = document.getElementById("update-pitch-price");
 let updatePitchBtn = document.getElementById("update-pitch");
 
-//Update price
+// Update price
 let updatePricePitchId = document.getElementById("update-price-pitch-id");
 let updatePricePitchPrice = document.getElementById("update-price-pitch-price");
 let updatePricePitchPriceButton = document.getElementById("update-price-pitch");
@@ -35,11 +35,9 @@ let searchBySelect = document.getElementById("search-by-select");
 let searchByInput = document.getElementById("search-by-input");
 let searchByButton = document.getElementById("search-by-button");
 
-// Problem 1. List of pitches on page load [3}
+
 
 // FETCH:-
-
-
 
 let productdata = []
 
@@ -116,6 +114,9 @@ pitchCreateBtn.addEventListener("click", () => {
         });
 });
 
+
+
+
 // DELETE PART:-
 
 document.addEventListener("click", (e) => {
@@ -134,6 +135,8 @@ function DeleteProduct(id) {
         })
         .catch((err) => console.error(err));
 }
+
+
 
 
 //  filter :-
@@ -162,6 +165,9 @@ filterPersonalCare.addEventListener("click", () => {
 
 })
 
+
+
+
 // SORTING PART low to high
 
 sortAtoZBtn.addEventListener("click", () => {
@@ -170,6 +176,9 @@ sortAtoZBtn.addEventListener("click", () => {
     Cardlist(sortAtoZdata)
 
 })
+
+
+
 
 // SORTING PART high to low
 
@@ -230,7 +239,43 @@ updatePitchBtn.addEventListener("click", () => {
 
 })
 
-searchByButton.addEventListener("click",)
 
 
+
+// serach :-
+
+searchByButton.addEventListener('click', () => {
+    let searchTerm = searchByInput.value.toLowerCase();
+    let filteredData = productdata.filter((el) => {
+        return el.title.toLowerCase().includes(searchTerm) || el.founder.toLowerCase().includes(searchTerm);
+    });
+
+    Cardlist(filteredData);
+});
+
+
+
+
+// only update-price :-
+
+updatePricePitchPriceButton.addEventListener("click", () => {
+    let id = updatePricePitchId.value;
+    let newPrice = updatePricePitchPrice.value;
+
+    fetch(`https://add-to-cart-backend-1-zim1.onrender.com/pitches/${id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ price: newPrice }) 
+    })
+        .then((res) => res.json())
+        .then((data) => {
+            alert("Price updated successfully!");
+        })
+        .catch((err) => {
+            console.error("Error updating price:", err);
+            alert("Failed to update price. Please try again later.");
+        });
+});
 

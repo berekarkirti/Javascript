@@ -1,4 +1,7 @@
 /* Reusable styles */
+body {
+  overflow-x: hidden;
+}
 .capsule {
   height: 26px;
   line-height: 26px;
@@ -28,6 +31,7 @@
 
 .sidebar-one h4 {
   margin-top: 0;
+  text-decoration: none;
 }
 
 .sidebar-one input,
